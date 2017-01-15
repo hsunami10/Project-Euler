@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 // Problem 2 of Project Euler
 
