@@ -8,7 +8,7 @@ using namespace std;
 int main() {
   int sum = 0;
   int element = 0;
-  int myArray[4000000];
+  int myArray[1000];
   bool once = false;
   int cancel = 0;
 
