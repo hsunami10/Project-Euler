@@ -9,10 +9,16 @@ int main() {
   long number = 10000000000000;
   int numOfFactors = 20;
   bool all;
+  bool once = false;
   long answer;
 
   for(long i = 20; i <= number; i+=10) {
     all = true;
+
+    if(!once) {
+      cout << "Calculating... Wait a few minutes.";
+      once = true;
+    }
 
     for(long j = 1; j <= 20; j++) {
 
