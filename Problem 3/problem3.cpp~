@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 // Problem 3 (Project Euler)
 
@@ -11,7 +12,7 @@ int main() {
   long number = 600851475143;
   bool isPrime = false;
 
-  for(long i = 2; i <= number; i++) {
+  for(long i = 2; i <= sqrt(number); i++) {
 
     // Check if factor
     if(number % i == 0) {
@@ -27,14 +28,14 @@ int main() {
 	}
 	else {
 	  isPrime = true;
-	  cout << isPrime;
 	}
       }
 
-      if(isPrime) {
+      if(isPrime && factor > factorPrime) {
 	factorPrime = factor;
-	cout << "Max prime: " << factorPrime;
       }
     }
   }
+  cout << "Max prime factor: " << factorPrime;
+  return 0;
 }
