@@ -9,7 +9,7 @@ int main() {
   long factor = 0;
   long factorPrime = 0;
   long number = 600851475143;
-  bool isPrime = false;;
+  bool isPrime = false;
 
   for(long i = 2; i <= number; i++) {
 
@@ -27,7 +27,7 @@ int main() {
 	}
 	else {
 	  isPrime = true;
-	  //cout << isPrime;
+	  
 	}
       }
 
