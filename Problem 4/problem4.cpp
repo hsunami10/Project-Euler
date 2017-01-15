@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <string>
 
 // Problem 4 (Project Euler)
@@ -21,9 +20,7 @@ int main() {
       palindromeNew = i * j;
 
       // Convert int to string
-      ostringstream convert;
-      convert << palindromeNew;
-      palindrome = convert.str();
+      palindrome = to_string(palindromeNew);
 
       half = palindrome.length()/2;
       count = 0;
@@ -36,8 +33,9 @@ int main() {
       
       // If it's a palindrome
       if(count == half) {
-	stringstream convert(palindrome);
-	convert >> palindromeNew;
+
+	// Convert string to int
+	palindromeNew = stoi(palindrome);
 
 	if(palindromeNew > palindromeOld) {
 	  palindromeOld = palindromeNew;

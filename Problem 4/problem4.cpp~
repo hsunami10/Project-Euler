@@ -21,9 +21,7 @@ int main() {
       palindromeNew = i * j;
 
       // Convert int to string
-      ostringstream convert;
-      convert << palindromeNew;
-      palindrome = convert.str();
+      palindrome = to_string(palindromeNew);
 
       half = palindrome.length()/2;
       count = 0;
@@ -36,8 +34,9 @@ int main() {
       
       // If it's a palindrome
       if(count == half) {
-	stringstream convert(palindrome);
-	convert >> palindromeNew;
+
+	// Convert string to int
+	palindromeNew = stoi(palindrome);
 
 	if(palindromeNew > palindromeOld) {
 	  palindromeOld = palindromeNew;
@@ -45,6 +44,6 @@ int main() {
       }
     }
   }
-  cout << "Answer: " << palindromeOld;
+  cout << "Answer: " << palindromeOld << '\n';
   return 0;
 }
