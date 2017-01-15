@@ -1,0 +1,51 @@
+#include <iostream>
+
+// Problem 9 (Project Euler)
+
+using namespace std;
+
+
+int Square(int value) {
+  return value * value;
+}
+
+int main() {
+  
+  int a, b, c, sum;
+  a = 0;
+  b = 0;
+  c = 0;
+  int ansSum = 1000;
+
+  for(int i = 1; i <= 1000; i++) {
+    a = i;
+    for(int j = 1; j <= 1000; j++) {
+      b = j;
+      for(int k = 1; k <= 1000; k++) {
+	c = k;
+	sum = 0;
+
+	// Check if increasing order
+	if(a < b && b < c) {
+
+	  // If perfect square
+	  if((Square(a) + Square(b)) == Square(c)) {
+	    sum = a + b + c;
+	  }
+	}
+
+	if(sum == ansSum) {
+	  break;
+	}
+      }
+      if(sum == ansSum) {
+	break;
+      }
+    }
+    if(sum == ansSum) {
+      break;
+    }
+  }
+  cout << "Answer: " << a * b * c;
+  return 0;
+}
