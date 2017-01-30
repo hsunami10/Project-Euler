@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  long triangleNum = 0;
+  int count;
+
+  // Simulate i -> infinity
+  for(long i = 1; i <= 1000000000000000; i++) {
+    triangleNum += i;
+    count = 0;
+    // Run through factors from 1-triangleNum/2
+    for(int j = 1; j <= triangleNum/2; j++) {
+      if(triangleNum % j == 0)
+	count++;
+    }
+    // Take into account itself as a factor
+    count++;
+    if(count > 500)
+      break;
+
+    cout << count << '\n';
+  }
+  cout << "Answer: " << triangleNum << '\n';
+  return 0;
+}
